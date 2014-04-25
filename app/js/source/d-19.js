@@ -8,20 +8,12 @@
   var totalQuote = 0;
 
   function getArrQuotes(){
-    debugger;
     var urlString = $('#symbol').val().toUpperCase().split(',').map($.trim).map(getURL);
-    //.map(doJSON);
-    //var def = $.Deferred();
     keepJSONaway(urlString);
-    addDiv();
-    //def.resolve();
   }
+
   function keepJSONaway(arrayStrings){
     arrayStrings.map(doJSON);
-  }
-  function addDiv(){
-    var div = '<div>'+totalQuote+'</div>';
-    $('#quote').append(div);
   }
 
   function getURL(str){
@@ -34,10 +26,13 @@
   }
 
   function callJSON(data){
+    var value = data.LastPrice;
+    addStuff(value);
+  }
 
-      var value = data.LastPrice;
-      totalQuote += value;
-
+  function addStuff(value){
+    totalQuote += value;
+    $('#quote').text('$'+totalQuote);
   }
 
 })();

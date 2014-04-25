@@ -2,13 +2,19 @@ doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
-    title drill 16
-    link(rel='stylesheet', href='./css/d-16.css')
+    title drill 20
+    link(rel='stylesheet', href='./css/d-20.css')
   body
-    h1 drill 16 Ajax
-    input#symbol(type='text')
-    button#get Get Quote
+
+    #input
+      input#symbol(type='text')
+      button#button add to chart
     #quote
+      table#graph
+        -for (var i = 0; i< 20; i++)
+          tr
+            -for(var j = 0; j<20; j++)
+              td
 
     script(src='./js/vendor/jquery-2.1.0.js')
-    script(src='./js/source/d-16.js')
+    script(src='./js/source/d-20.js')
