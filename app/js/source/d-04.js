@@ -12,10 +12,8 @@
     var top = splitArray[1].split(', ');
 
     for (var i = 0; i < bottom.length; i++){
-      debugger;
       var result = Math.pow(bottom[i], top[i]);
 
-      //$('#result').append(div);
       var topDiv = '<div class="top">'+bottom[i]+'<sup>'+top[i]+'</sup></div>';
       var bottomDiv = '<div class="bottom">'+result+'</div>';
       var div = $('#result').append(topDiv).append(bottomDiv);

@@ -14,6 +14,6 @@
     }
   }
   function doMath(num){
-    return num*num*num*num;
+    return Math.pow(num, 4);
   }
 })();
